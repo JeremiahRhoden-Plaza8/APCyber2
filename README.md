@@ -3,4 +3,4 @@
 ### LLM Making Is Fun
 #### LLM Making Is cool
 ##### LLM Making Takes too long
-###### I never want to see a LLM again
+###### I never want to see a LLM again 😭
