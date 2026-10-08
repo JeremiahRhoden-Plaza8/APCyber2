@@ -1,6 +1,6 @@
 import re #regex expressions
 
-source_file = 'league.txt'
+source_file = 'data.txt'
 
 # Read a sample of the text
 with open(source_file, "r", encoding="utf-8") as file:
@@ -49,8 +49,7 @@ class SimpleTokenizerV1:
 
 #Create new tokenizer object
 tokenizer = SimpleTokenizerV1(vocab)
-text = """seafaring men were particularly excited.  Merchants, common sailors,
-captains of vessels, skippers, both of Europe and America,"""
+text = """This is a Mets year,for all you Mets here. Let’s go! Let’s go Mets!"""
 
 
 #Encode the text sample
@@ -99,15 +98,24 @@ class SimpleTokenizerV2:
             text = re.sub(r'\s+([,.:;?!"()\'])', r'\1', text)
             return text
 
-text1 = "The year 1866 was signalised by a remarkable incident" # <---choose your own from league.txt
-text2 = "and excited the public mind, even in the interior of continents," # <---choose your own from league.txt
-text3 = "My name is Student"
+text1 = "There’s no stopping us now, we’re gonna do it again."
+text2 = "Do it, (do it) do it, (do it) do it, let’s go! Ohh…"
+text3 = "This is a Mets year,for all you Mets here. Let’s go! Let’s go Mets!" 
 
 text = " <|endoftext|> ".join((text1, text2))
 new_text = " <|endoftext|> ".join((text1, text3))
 
 print(text)
 print(new_text)
+lyrics = input("Are you a real Mets Fan name a player from the 1986 championship team: ")
+
+#Encode the text sample
+ids = tokenizer.encode(lyrics)
+print(ids)\
+
+#Decode the token ids
+final_text = tokenizer.decode(ids)
+print(final_text + " was a fantastic player you must be a real fan!")
 
 #Use SimpleTokenizerV2 
 tokenizer = SimpleTokenizerV2(vocab)

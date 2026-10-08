@@ -56,7 +56,7 @@ print(ids)\
 
 #Decode the token ids
 final_text = tokenizer.decode(ids)
-print(final_text)
+print(final_text + " is indeed a english, word good job my friend.")
 
 #end of text & unknown tokens
 all_tokens = sorted(list(set(preprocessed)))
@@ -94,12 +94,14 @@ class SimpleTokenizerV2:
 #use SimpleTokenizerV2
 tokenizer = SimpleTokenizerV2(vocab)
 
-text1 = "long object, spindle-shaped, occasionally phosphorescent" 
-text2 = "Not to mention rumours which agitated the maritime population"
-text3 = "My name is Jeremiah"
+text1 = "There was once a superior user a user of immence skill named " 
+text2 = ", was a great user of this program and used it to identify a english word."
+user_word = input("Enter your name fair user: ")
+text3 = user_word
+text4 = "."
 
-text = " <|endoftext|> ".join((text1, text2))
-new_text = " <|endoftext|> ".join((text1, text3))
+text = "".join((text1, text3, text4))
+new_text = "".join((text3, text2))
 
 print(text)
 print(new_text)
