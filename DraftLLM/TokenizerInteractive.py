@@ -1,6 +1,6 @@
 import re #regex expressions
 
-source_file = 'league.txt'
+source_file = 'words.txt'
 
 # Read a sample of the text
 with open(source_file, "r", encoding ="utf-8") as file:
@@ -47,7 +47,8 @@ class SimpleTokenizerV1:
         return text
     #Create new tokenizer object
 tokenizer = SimpleTokenizerV1(vocab)
-text = 'The facts relating to this apparition (entered in various log-books)'
+user_word = input("Enter a chosen word: ")
+text = user_word
 
 #Encode the text sample
 ids = tokenizer.encode(text)
@@ -84,7 +85,6 @@ class SimpleTokenizerV2:
 
         ids = [self.str_to_int[s] for s in preprocessed]
         return ids
-    
     def decode(self, ids):
         text = " ".join([self.int_to_str[i] for i in ids])
         #Replace spaces before the specified punctuations
@@ -94,14 +94,12 @@ class SimpleTokenizerV2:
 #use SimpleTokenizerV2
 tokenizer = SimpleTokenizerV2(vocab)
 
-text1 = "The user" 
-text2 = "was the ultimate user of an interactive tokenizer his name was"
-user_word = input("What is your name: ")
-text3 = user_word
+text1 = "long object, spindle-shaped, occasionally phosphorescent" 
+text2 = "Not to mention rumours which agitated the maritime population"
+text3 = "My name is Jeremiah"
 
-
-text = " <|endoftext|> ".join((text1, text3))
-new_text = " <|endoftext|> ".join((text2, text3))
+text = " <|endoftext|> ".join((text1, text2))
+new_text = " <|endoftext|> ".join((text1, text3))
 
 print(text)
 print(new_text)
