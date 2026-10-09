@@ -94,7 +94,7 @@ class SimpleTokenizerV2:
 #use SimpleTokenizerV2
 tokenizer = SimpleTokenizerV2(vocab)
 
-text1 = "There was once a superior user a user of immence skill named " 
+text1 = "There was once a superior user, a user of immense skill named " 
 text2 = ", was a great user of this program and used it to identify a english word."
 user_word = input("Enter your name fair user: ")
 text3 = user_word
